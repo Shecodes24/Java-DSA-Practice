@@ -17,13 +17,9 @@ public class Linkedlist
     public void addFirst(int data)
     {   
         Node newNode = new Node(data);
-        if(head == null)
-        {
-            head = newNode;
-            return;
-        }
         newNode.next =  head;
         head = newNode;
+        return;
     }
 
     public void display()
@@ -61,6 +57,6 @@ public class Linkedlist
         ll.addFirst(20);
         ll.addFirst(10);
         ll.display();
-        System.out.println("Middle Element: "+ll.mid());
+        System.out.println("Mid Element: "+ll.mid());
     }
 }
