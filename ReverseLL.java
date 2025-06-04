@@ -26,6 +26,17 @@ public class LinkedList
         head = newNode;
     }
 
+    public void display()
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+            System.out.print(temp.data+"--->");
+            temp = temp.next;
+        }
+        System.out.print("null\n");
+    }
+
     public Node reverse()
     {
         Node prev = null;
