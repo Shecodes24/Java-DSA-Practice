@@ -1,4 +1,4 @@
-public class ReverseLL
+public class LinkedList
 {
     public static class Node
     {
@@ -44,7 +44,7 @@ public class ReverseLL
 
     public static void main(String[] args)
     {
-        ReverseLL ll = new ReverseLL();
+        LinkedList ll = new LinkedList();
         ll.addFirst(50);
         ll.addFirst(40);
         ll.addFirst(30);
