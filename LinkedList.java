@@ -16,13 +16,9 @@ public class Linkedlist
     public void addFirst(int data)
     {   
         Node newNode = new Node(data);
-        if(head == null)
-        {
-            head = newNode;
-            return;
-        }
         newNode.next =  head;
         head = newNode;
+        return;
     }
 
     public void addLast(int data)
@@ -43,6 +39,11 @@ public class Linkedlist
 
     public void addPos(int index, int data)
     {
+        if(index < 0)
+        {
+            System.out.println("Invalid Position");
+            return;
+        }
         Node newNode = new Node(data);
         int i = 0;
         Node temp = head;
@@ -50,6 +51,11 @@ public class Linkedlist
         {
             temp = temp.next;
             i++;
+        }
+        if(temp == null)
+        {
+            System.out.println("Invalid Position");
+            return;
         }
         newNode.next = temp.next;
         temp.next = newNode;
@@ -72,12 +78,27 @@ public class Linkedlist
 
     public void delPos(int index)
     {
+        if(index < 0)
+        {
+            System.out.println("Invalid Position");
+            return;
+        }
+        else if(index == 1)
+        {
+            delFirst();
+            return;
+        }
         Node temp = head;
         int i = 0;
         while(i < index-1)
         {
             temp = temp.next;
             i++;
+        }
+        if(temp == null)
+        {
+            System.out.println("Invalid Position");
+            return;
         }
         temp.next = temp.next.next;
     }
